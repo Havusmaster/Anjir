@@ -143,6 +143,11 @@ body::after {
       @apply px-6;
     }
   }
+  @media (max-width: 380px) {
+    .container {
+      @apply px-4;
+    }
+  }
 
   .eyebrow {
     @apply font-mono text-xs tracking-wide text-ink3 uppercase inline-flex items-center gap-2.5;

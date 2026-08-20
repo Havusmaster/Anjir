@@ -34,7 +34,7 @@ const seed = computed(() => (props.project.name + props.project.cat).length)
       </div>
       <p class="text-sm text-ink2 leading-relaxed">{{ project.desc }}</p>
 
-      <div class="grid grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden mt-1">
+      <div class="grid grid-cols-1 min-[420px]:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden mt-1">
         <div class="bg-bg p-2.5">
           <div class="font-mono text-[9.5px] text-ink3 uppercase tracking-wider mb-0.5">Platform</div>
           <div class="text-[12.5px] text-ink font-medium">{{ project.platform }}</div>
