@@ -1,0 +1,25 @@
+<div class="min-h-screen flex flex-col">
+  <app-header
+    [currentView]="currentView()"
+    (navigate)="go($event)"
+    (toggleMenu)="toggleMenu()"
+  />
+
+  <app-mobile-menu
+    [open]="menuOpen()"
+    [currentView]="currentView()"
+    (navigate)="go($event)"
+  />
+
+  <main class="flex-1">
+    @switch (currentView()) {
+      @case ('home') { <app-home-view (navigate)="go($event)" /> }
+      @case ('projects') { <app-projects-view /> }
+      @case ('team') { <app-team-view /> }
+      @case ('about') { <app-about-view (navigate)="go($event)" /> }
+      @case ('contact') { <app-contact-view /> }
+    }
+  </main>
+
+  <app-footer [currentView]="currentView()" (navigate)="go($event)" />
+</div>

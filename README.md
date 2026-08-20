@@ -1,13 +1,12 @@
 # Anjir — Full-stack product engineering
 
-Anjir — bu jamoaviy/portfolio veb-sayt bo'lib, Vue 3, Vite va Tailwind CSS asosida qurilgan. Sayt loyihalar, jamoa a'zolari, kompaniya haqida ma'lumot va aloqa bo'limlarini o'z ichiga oladi.
+Anjir — bu jamoaviy/portfolio veb-sayt bo'lib, Angular 22, Tailwind CSS 4 asosida qurilgan. Sayt loyihalar, jamoa a'zolari, kompaniya haqida ma'lumot va aloqa bo'limlarini o'z ichiga oladi.
 
 ## Texnologiyalar
 
-- [Vue 3](https://vuejs.org/) — interfeys komponentlari
-- [Vite](https://vitejs.dev/) — build va ishga tushirish vositasi
+- [Angular 22](https://angular.dev/) — interfeys komponentlari (standalone, signal-based)
 - [Tailwind CSS 4](https://tailwindcss.com/) — stillar
-- JavaScript (Composition API, `<script setup>`)
+- TypeScript
 
 ## Boshlash
 
@@ -16,30 +15,28 @@ Anjir — bu jamoaviy/portfolio veb-sayt bo'lib, Vue 3, Vite va Tailwind CSS aso
 npm install
 
 # Ishlab chiqish rejimi
-npm run dev
+npm run start
 
 # Ishlab chiqarish uchun build
 npm run build
-
-# Build natijasini oldindan ko'rish
-npm run preview
 ```
 
-`npm run dev` ishga tushgandan so'ng sayt odatda `http://localhost:5173` manzilida ochiladi.
+`npm run start` ishga tushgandan so'ng sayt odatda `http://localhost:4200` manzilida ochiladi.
 
 ## Loyiha tuzilishi
 
 ```
 src/
-├── components/     # Umumiy UI komponentlar
-├── composables/    # Vue composable-funksiyalar
-├── data/           # Sayt, loyiha va jamoa ma'lumotlari
-├── directives/     # Custom direktivalar
-├── views/          # Sahifa ko'rinishlari
-├── App.vue         # Asosiy komponent
-└── main.js         # Kirish nuqtasi
+├── app/
+│   ├── components/     # Umumiy UI komponentlar
+│   ├── data/           # Sayt, loyiha va jamoa ma'lumotlari
+│   ├── directives/     # Custom direktivalar
+│   ├── services/       # Temalar va navigatsiya servislari
+│   ├── views/          # Sahifa ko'rinishlari
+│   ├── app.ts          # Asosiy komponent
+│   └── main.ts         # Kirish nuqtasi
 ```
 
 ## Aloqa
 
-Ijtimoiy tarmoqlar va aloqa ma'lumotlarini `src/data/site.js` faylida yangilashingiz mumkin.
+Ijtimoiy tarmoqlar va aloqa ma'lumotlarini `src/app/data/site.ts` faylida yangilashingiz mumkin.
