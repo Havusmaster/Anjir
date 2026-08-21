@@ -8,6 +8,7 @@ export interface MemberInput {
   name: string
   role: string
   initials: string
+  photo?: string
   placeholder?: boolean
   focus: string
   primary: string
@@ -50,7 +51,7 @@ export interface MemberInput {
     } @else {
       <article class="group border border-line rounded-lg bg-elev overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-card">
         <div class="relative aspect-square overflow-hidden bg-surface2">
-          <app-avatar [seed]="index" [initials]="member.initials" />
+          <app-avatar [seed]="index" [initials]="member.initials" [photo]="member.photo || ''" />
           <div class="absolute inset-0 bg-gradient-to-t from-elev/90 to-transparent"></div>
           <div class="absolute bottom-3 left-3 flex gap-1.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
             @for (s of socials; track s.name) {

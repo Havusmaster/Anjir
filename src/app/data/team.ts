@@ -2,6 +2,7 @@ export interface Member {
   name: string
   role: string
   initials: string
+  photo?: string
   placeholder?: boolean
   focus: string
   primary: string
@@ -15,6 +16,7 @@ export const TEAM: Member[] = [
     name: 'Azim Abdishukurov',
     role: 'Backend Developer / Software Engineer',
     initials: 'AA',
+    photo: '', // put image path here, e.g. '/images/team/azim.jpg' or 'https://...' — when set, initials disappear
     focus: 'Backend & architecture',
     primary: '.NET · ASP.NET Core',
     desc: 'Builds the backbone of Anjir products — APIs, data models, authentication, and the services that hold everything together.',
@@ -25,6 +27,7 @@ export const TEAM: Member[] = [
     name: '[TEAM MEMBER NAME]',
     role: '[ROLE]',
     initials: '—',
+    photo: '',
     placeholder: true,
     focus: '[FOCUS]',
     primary: '[STACK]',
@@ -36,6 +39,7 @@ export const TEAM: Member[] = [
     name: '[TEAM MEMBER NAME]',
     role: '[ROLE]',
     initials: '—',
+    photo: '',
     placeholder: true,
     focus: '[FOCUS]',
     primary: '[STACK]',
