@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { useId } from 'vue'
 
 const COLORS = ['#2F9557', '#4FB077', '#5DA9C9', '#B98514', '#7C8F55']
@@ -11,7 +12,7 @@ const props = defineProps({
 
 const c = COLORS[props.seed % COLORS.length]
 const gid = useId()
-const hasPhoto = () => !!props.photo && !props.photo.startsWith('[')
+const hasPhoto = computed(() => !!props.photo && !props.photo.startsWith('['))
 </script>
 
 <template>
@@ -24,13 +25,11 @@ const hasPhoto = () => !!props.photo && !props.photo.startsWith('[')
     </defs>
     <rect width="200" height="200" fill="var(--color-surface2)" />
     <rect width="200" height="200" :fill="`url(#${gid})`" />
-    <template v-if="hasPhoto()">
-      <image :href="photo" x="0" y="0" width="200" height="200" preserveAspectRatio="xMidYMid slice" />
-    </template>
-    <template v-else>
+    <image v-if="hasPhoto" :href="photo" x="0" y="0" width="200" height="200" preserveAspectRatio="xMidYMid slice" />
+    <g v-else>
       <circle cx="100" cy="82" r="34" :fill="c" />
       <path d="M40 200c0-33 27-56 60-56s60 23 60 56" :fill="c" />
       <text x="100" y="118" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="42" font-weight="600" fill="#fff">{{ initials }}</text>
-    </template>
+    </g>
   </svg>
 </template>
