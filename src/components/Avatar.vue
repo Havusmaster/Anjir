@@ -5,11 +5,13 @@ const COLORS = ['#2F9557', '#4FB077', '#5DA9C9', '#B98514', '#7C8F55']
 
 const props = defineProps({
   seed: { type: Number, default: 0 },
-  initials: { type: String, default: 'AA' }
+  initials: { type: String, default: 'AA' },
+  photo: { type: String, default: '' }
 })
 
 const c = COLORS[props.seed % COLORS.length]
 const gid = useId()
+const hasPhoto = () => !!props.photo && !props.photo.startsWith('[')
 </script>
 
 <template>
@@ -22,8 +24,13 @@ const gid = useId()
     </defs>
     <rect width="200" height="200" fill="var(--color-surface2)" />
     <rect width="200" height="200" :fill="`url(#${gid})`" />
-    <circle cx="100" cy="82" r="34" :fill="c" />
-    <path d="M40 200c0-33 27-56 60-56s60 23 60 56" :fill="c" />
-    <text x="100" y="118" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="42" font-weight="600" fill="#fff">{{ initials }}</text>
+    <template v-if="hasPhoto()">
+      <image :href="photo" x="0" y="0" width="200" height="200" preserveAspectRatio="xMidYMid slice" />
+    </template>
+    <template v-else>
+      <circle cx="100" cy="82" r="34" :fill="c" />
+      <path d="M40 200c0-33 27-56 60-56s60 23 60 56" :fill="c" />
+      <text x="100" y="118" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="42" font-weight="600" fill="#fff">{{ initials }}</text>
+    </template>
   </svg>
 </template>

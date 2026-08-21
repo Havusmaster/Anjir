@@ -3,6 +3,7 @@ export const TEAM = [
     name: 'Azim Abdishukurov',
     role: 'Backend Developer / Software Engineer',
     initials: 'AA',
+    photo: '', // put image path here, e.g. '/images/team/azim.jpg' or 'https://...' — when set, initials disappear
     focus: 'Backend & architecture',
     primary: '.NET · ASP.NET Core',
     desc: 'Builds the backbone of Anjir products — APIs, data models, authentication, and the services that hold everything together.',
@@ -13,6 +14,7 @@ export const TEAM = [
     name: '[TEAM MEMBER NAME]',
     role: '[ROLE]',
     initials: '—',
+    photo: '',
     placeholder: true,
     focus: '[FOCUS]',
     primary: '[STACK]',
@@ -24,6 +26,7 @@ export const TEAM = [
     name: '[TEAM MEMBER NAME]',
     role: '[ROLE]',
     initials: '—',
+    photo: '',
     placeholder: true,
     focus: '[FOCUS]',
     primary: '[STACK]',
